@@ -14,6 +14,11 @@ def caesar(text, shift, direction):
             result = position + shift
         elif direction == "decode":
             result = position - shift
+        # or
+        # if direction == "decode":
+        #     shift *= -1
+        # result = position + shift
+        # do the above code iutside the loop after the cipher_text = "" statement
         cipher_text += alphabet[result % 26]
     print(f"The {direction}d text is {cipher_text}")
 
