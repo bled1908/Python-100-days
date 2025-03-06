@@ -1,5 +1,6 @@
 # Calculator
 from replit import clear
+from art import logo
 
 # Add
 def add(n1, n2):
@@ -34,6 +35,7 @@ operations = {
 
 def calculator():
     """A simple calculator function."""
+    print(logo)
     num1 = float(input("What's the first number?: "))
     for symbol in operations:
         print(symbol)
