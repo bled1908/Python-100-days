@@ -36,6 +36,12 @@ for symbol in operations:
     print(symbol)
 operation_symbol = input("Pick an operation from the line above: ")
 num2 = float(input("What's the second number?: "))
+first_result = operations[operation_symbol](num1, num2)
 
+print(f"{num1} {operation_symbol} {num2} = {first_result}")
 
-print(f"{num1} {operation_symbol} {num2} = {operations[operation_symbol](num1, num2)}")
+operation_symbol = input("Pick another operation: ")
+num3 = float(input("What's the next number?: "))
+second_result = operations[operation_symbol](first_result, num3)
+
+print(f"{first_result} {operation_symbol} {num3} = {second_result}") 
