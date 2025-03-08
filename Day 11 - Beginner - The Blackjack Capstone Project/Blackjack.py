@@ -64,9 +64,8 @@ import random
 
 balance = 100
 
-def Blackjack():
+def deal_card():
     global balance
-    print(logo)
     user_cards = []
     computer_cards = []
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -123,17 +122,22 @@ def Blackjack():
     
     prompt = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
     if prompt == "y":
-        Blackjack()
+        deal_card()
     else:
         print(f"Your final balance is ${balance}.")
         print("Thank you for playing.")
+        print("Goodbye.")
 
-prompt = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
-if prompt == "y":
-    Blackjack()
-else:
-    print(f"Your final balance is ${balance}.")
-    print("Thank you for playing.")
+def Blackjack():
+    print(logo)
+    prompt = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
+    if prompt == "y":
+        deal_card()
+    else:
+        print(f"Your final balance is ${balance}.")
+        print("Thank you for playing.")
+        print("Goodbye.")
 
+Blackjack()
 
     
