@@ -114,33 +114,32 @@ def deal_card():
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
     
     if user_score > 21:
-        print("You went over. You lose.")
+        print("You went over. You lose 😤.")
         balance -= bet
     elif computer_score > 21:
-        print("Computer went over. You win.")
+        print("Computer went over. You win 😁.")
         balance += bet
     elif user_score == computer_score:
-        print("It's a draw.")
+        print("It's a draw 🙃.")
     elif user_score == 21:
-        print("You win with a Blackjack.")
+        print("You win with a Blackjack 😎.")
         balance += bet
     elif computer_score == 21:
-        print("Computer wins with a Blackjack.")
+        print("Computer wins with a Blackjack 😱.")
         balance -= bet
     elif user_score > computer_score:
-        print("You win.")
+        print("You win 😃.")
         balance += bet
     else:
-        print("Computer wins.")
+        print("Computer wins 😤.")
         balance -= bet
     
     print(f"Your current balance is ${balance}.")
     if balance <= 0:
         print("You have run out of money. Game over.")
         return
-    
-    prompt = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
-    if prompt == "y":
+     
+    if input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
         deal_card()
     else:
         print(f"Your final balance is ${balance}.")
@@ -152,8 +151,7 @@ def Blackjack():
     game of Blackjack.
     """
     print(logo)
-    prompt = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
-    if prompt == "y":
+    if input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
         deal_card()
     else:
         print(f"Your final balance is ${balance}.")
