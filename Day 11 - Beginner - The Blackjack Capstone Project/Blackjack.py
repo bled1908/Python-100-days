@@ -65,6 +65,8 @@ import random
 balance = 100
 
 def deal_card():
+    """Deals cards to the user and computer and determines the winner.
+    """
     global balance
     user_cards = []
     computer_cards = []
@@ -129,6 +131,9 @@ def deal_card():
         print("Goodbye.")
 
 def Blackjack():
+    """Starts the
+    game of Blackjack.
+    """
     print(logo)
     prompt = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
     if prompt == "y":
