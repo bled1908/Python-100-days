@@ -74,7 +74,12 @@ def deal_card():
     user_score = 0
     computer_score = 0
     
-    bet = int(input(f"Your balance: ${balance}\nHow much do you want to bet? $"))
+    while True:
+        bet = int(input(f"Your balance: ${balance}\nHow much do you want to bet? $"))
+        if bet > balance:
+            print("You do not have enough money to place that bet. Please enter a valid amount.")
+        else:
+            break
     
     for _ in range(2):
         user_cards.append(random.choice(cards))
@@ -88,14 +93,26 @@ def deal_card():
         if draw == "y":
             user_cards.append(random.choice(cards))
             user_score = sum(user_cards)
+            # Check for Ace and adjust score
+            if user_score > 21 and 11 in user_cards:
+                user_cards.remove(11)
+                user_cards.append(1)
+                user_score = sum(user_cards)
             print(f"Your cards: {user_cards}, current score: {user_score}")
         else:
             break
+        
     while computer_score < 17:
         computer_cards.append(random.choice(cards))
         computer_score = sum(computer_cards)
+        # Check for Ace and adjust score
+        if computer_score > 21 and 11 in computer_cards:
+            computer_cards.remove(11)
+            computer_cards.append(1)
+            computer_score = sum(computer_cards)
     print(f"Your final hand: {user_cards}, final score: {user_score}")
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
+    
     if user_score > 21:
         print("You went over. You lose.")
         balance -= bet
