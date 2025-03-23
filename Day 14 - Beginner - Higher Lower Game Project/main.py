@@ -7,11 +7,15 @@ print(logo)
 score = 0
 
 def higher_lower():
+    """Higher Lower Game
+    """
     global score
     play_game = True
     while play_game:
         A = random.choice(data)
         B = random.choice(data)
+        if A == B:
+            B = random.choice(data)
         print(f"Compare A: {A["name"]}, a {A["description"]}, from {A["country"]}")
         print(vs)
         print(f"Against B: {B["name"]}, a {B["description"]}, from {B["country"]}")
