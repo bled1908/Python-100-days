@@ -7,7 +7,29 @@ print(logo)
 score = 0
 
 def higher_lower():
-    """Higher Lower Game
+    """Plays the Higher Lower Game.
+
+    The game compares two randomly selected items from a dataset (`data`) and asks the user to guess 
+    which item has more followers. The user inputs their choice ('A' or 'B'), and the game checks 
+    if the guess is correct. The score is incremented for correct guesses, and the game continues 
+    until the user makes an incorrect guess. The final score is displayed when the game ends.
+
+    Global Variables:
+    - score (int): Tracks the user's current score.
+
+    External Dependencies:
+    - `data` (list of dict): A dataset containing items with attributes such as "name", 
+      "description", "country", and "follower_count".
+    - `vs` (str): A string or graphic used to visually separate the two items being compared.
+    - `logo` (str): A string or graphic representing the game's logo.
+    - `clear` (function): A function to clear the console output.
+
+    Input:
+    - User types 'A' or 'B' to indicate their guess.
+
+    Output:
+    - Prints the comparison details, feedback on the user's guess, and the current or final score.
+    Higher Lower Game
     """
     global score
     play_game = True
