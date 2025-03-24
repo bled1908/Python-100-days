@@ -1,3 +1,6 @@
+from art import coffee_logo
+from replit import clear
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -45,6 +48,15 @@ def print_report() -> None:
     print(f"Coffee: {resources['coffee']}g")
     print(f"Money: ${money}")
 
+def ask_again():
+    """Asks the user if they would like to order another drink."""
+    choice = input("Would you like to order another drink? Yes/No: ").lower()
+    if choice == "yes":
+        clear()
+    else:
+        print("Thank you for using the Coffee Machine. Have a great day!")
+        clear()
+
 def check_resource(prompt: str) -> bool:
     """Checks if there are sufficient resources to make the selected drink."""
     for item in MENU[prompt]["ingredients"]:
@@ -89,9 +101,12 @@ def CoffeeMachine() -> None:
     machine_runs = True
 
     while machine_runs:
+        print(coffee_logo)
+        print("Welcome to the Coffee Machine!")
         prompt = input("What would you like? (espresso/latte/cappuccino): ").lower()
         if prompt == "report":
             print_report()
+            ask_again()
         elif prompt == "off":
             machine_runs = False
         elif prompt in MENU:
@@ -100,7 +115,12 @@ def CoffeeMachine() -> None:
                 if transaction(total, prompt):
                     deduct_resources(prompt)
                     print(f"Here is your {prompt} ☕. Enjoy!")
+                    ask_again()
+                else:
+                    ask_again()
+                    
         else:
             print("Invalid selection. Please choose a valid option.")
+            ask_again()
 
 CoffeeMachine()
