@@ -1,14 +1,121 @@
-question_data = [
-    {"text": "A slug's blood is green.", "answer": "True"},
-    {"text": "The loudest animal is the African Elephant.", "answer": "False"},
-    {"text": "Approximately one quarter of human bones are in the feet.", "answer": "True"},
-    {"text": "The total surface area of a human lungs is the size of a football pitch.", "answer": "True"},
-    {"text": "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.", "answer": "True"},
-    {"text": "In London, UK, if you happen to die in the House of Parliament, you are entitled to a state funeral.", "answer": "False"},
-    {"text": "It is illegal to pee in the Ocean in Portugal.", "answer": "True"},
-    {"text": "You can lead a cow down stairs but not up stairs.", "answer": "False"},
-    {"text": "Google was originally called 'Backrub'.", "answer": "True"},
-    {"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "True"},
-    {"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "False"},
-    {"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
-]
+question_data = {
+  "response_code": 0,
+  "results": [
+    {
+      "type": "boolean",
+      "difficulty": "medium",
+      "category": "History",
+      "question": "The M41 Walker Bulldog remains in service in some countries to this day.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "The Konami Code is known as Up, Up, Down, Down, Left, Right, Right, Left, B, A, Start.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Video Games",
+      "question": "In the game Paper Mario for the Nintendo 64 the first partner you meet is a Goomba, what is its name?",
+      "correct_answer": "Goombario",
+      "incorrect_answers": [
+        "Goombella",
+        "Goombarry",
+        "Goomby"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "General Knowledge",
+      "question": "How many calories are in a 355 ml can of Pepsi Cola?",
+      "correct_answer": "150",
+      "incorrect_answers": [
+        "200",
+        "100",
+        "155"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "In the original Mega Man series, who is Mega Man&#039;s arch nemesis?",
+      "correct_answer": "Dr. Wily",
+      "incorrect_answers": [
+        "Dr. Light",
+        "Dr. Bad",
+        "Mr. Z"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Video Games",
+      "question": "How many people can you recruit in the game Suikoden in a single playthrough?",
+      "correct_answer": "107",
+      "incorrect_answers": [
+        "108",
+        "93",
+        "96"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Film",
+      "question": "Who played Sgt. Gordon Elias in &#039;Platoon&#039; (1986)?",
+      "correct_answer": "Willem Dafoe",
+      "incorrect_answers": [
+        "Charlie Sheen",
+        "Matt Damon",
+        "Johnny Depp"
+      ]
+    },
+    {
+      "type": "boolean",
+      "difficulty": "easy",
+      "category": "Science: Computers",
+      "question": "Ada Lovelace is often considered the first computer programmer.",
+      "correct_answer": "True",
+      "incorrect_answers": [
+        "False"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Art",
+      "question": "Which one of these paintings is not by Caspar David Friedrich?",
+      "correct_answer": "The Black Sea",
+      "incorrect_answers": [
+        "The Sea of Ice",
+        "Wanderer above the Sea of Fog",
+        "The Monk by the Sea"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "History",
+      "question": "During the Mongolian invasions of Japan, what were the Mongol boats mostly stopped by?",
+      "correct_answer": "Typhoons",
+      "incorrect_answers": [
+        "Tornados",
+        "Economic depression",
+        "Samurai"
+      ]
+    }
+  ]
+}
+
+
