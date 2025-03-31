@@ -1,5 +1,9 @@
 ######## Challenge 1 - Draw a Square ############
 from turtle import Turtle, Screen
+# Differnt way to import turtle:
+# import turtle as t
+# from turtle import *
+# from turtle import Turtle, Screen
 
 turtle1 = Turtle()
 turtle1.shape("turtle")
