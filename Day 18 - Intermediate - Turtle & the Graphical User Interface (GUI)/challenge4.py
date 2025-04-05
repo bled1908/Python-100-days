@@ -1,23 +1,28 @@
-
-from turtle import Turtle, Screen
+import turtle as t
 import random as rd
 
-turtle1 = Turtle()
+turtle1 = t.Turtle()
+t.colormode(255)  # Set the color mode to RGB
 turtle1.shape("turtle")
 turtle1.color("firebrick")
-
-colors = ["deep sky blue", "firebrick", "medium violet red", "blue violet", "green yellow", "dark gray", "deep pink", "indian red", "light salmon", "medium spring green", "medium sea green", "dark orange", "gold", "light blue", "light coral", "light goldenrod yellow", "light green", "light pink", "light slate gray", "light steel blue", "lime green", "medium aquamarine", "medium orchid", "medium purple", "medium turquoise", "medium violet red", "midnight blue", "mint cream", "misty rose", "moccasin"]
-
 turtle1.pensize(8)
-turtle1.speed(8)
+turtle1.speed("fastest")
 turtle1.shapesize(1, 1, 3)
+
+def random_color():
+    r = rd.randint(0, 255)
+    g = rd.randint(0, 255)
+    b = rd.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
+
 for _ in range(1, rd.randint(100, 200)):
     angle = rd.choice([0, 90, 180, 270])
-    turtle1.color(rd.choice(colors))
+    turtle1.color(random_color())
     turtle1.forward(20)
     # turtle1.right(angle) if rd.randint(0, 1) else turtle1.left(angle)
     turtle1.setheading(angle)
 
 
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
