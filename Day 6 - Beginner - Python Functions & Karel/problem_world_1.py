@@ -1,20 +1,20 @@
 # For problem_world.json, problem_world2.json, and problem_world3.json
-# this soluttion is more efficient than problem_world_1.py
 def turn_right():
     turn_left()
     turn_left()
     turn_left()
 
-while not is_facing_north():
-    turn_left()
+while front_is_clear():
+    move()
 turn_left()
+
 while not at_goal():
     if right_is_clear():
         turn_right()
         move()
-    if front_is_clear():
+    elif front_is_clear():
         move()
-    if not right_is_clear() and not front_is_clear():
+    else:
         turn_left() 
 ################################################################
 # WARNING: Do not change this comment.
