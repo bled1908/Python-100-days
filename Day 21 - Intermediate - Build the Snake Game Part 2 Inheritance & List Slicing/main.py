@@ -22,7 +22,6 @@ screen.onkey(snake.right, "Right")
     
 game_is_on = True
 while game_is_on:
-    score.update_scoreboard()
     screen.update()  # Update the screen after each segment moves
     time.sleep(0.1) # Control the speed of the game
     snake.move()
@@ -31,5 +30,10 @@ while game_is_on:
     if snake.head.distance(food) < 15:
         food.refresh()
         score.increase_score()
+
+    # Detect collision with wall
+    if snake.head.xcor() > 299 or snake.head.xcor() < -299 or snake.head.ycor() > 299 or snake.head.ycor() < -299:
+        game_is_on = False
+        score.game_over()
 
 screen.exitonclick() 
