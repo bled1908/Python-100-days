@@ -24,9 +24,9 @@ while game_is_on:
     time.sleep(0.1)  # Control the speed of the game
     screen.update()  # Update the screen after each segment moves
     # Here you would typically add logic for the ball movement, collision detection, etc.
-    ball.move()
-    
-    # For now, we will just keep the game running
-    pass
+    ball.move() 
+    # Detect collision with upper and lower walls and bounce the ball
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce()
 
 screen.exitonclick() 
