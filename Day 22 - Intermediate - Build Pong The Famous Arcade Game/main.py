@@ -33,6 +33,8 @@ def key_release_w(): keys_pressed["w"] = False
 def key_press_s(): keys_pressed["s"] = True
 def key_release_s(): keys_pressed["s"] = False
 
+game_score = screen.textinput("Game Score", "Enter the score to win the game (default is 5):")
+
 # Bind keys 
 screen.listen()
 screen.onkeypress(key_press_up, "Up")
@@ -80,5 +82,18 @@ while game_is_on:
     if ball.xcor() < -390:
         ball.reset_position()
         scoreboard.increase_right_score()
+        
+    # Check for game over condition
+    if scoreboard.score_l >= int(game_score) or scoreboard.score_r >= int(game_score):
+        game_is_on = False
+        if scoreboard.score_l > scoreboard.score_r:
+            scoreboard.goto(0, 0)
+            scoreboard.write("Left Player Wins!", align="center", font=("Courier", 24, "normal"))
+        elif scoreboard.score_r > scoreboard.score_l:
+            scoreboard.goto(0, 0)
+            scoreboard.write("Right Player Wins!", align="center", font=("Courier", 24, "normal"))
+        else:
+            scoreboard.goto(0, 0)
+            scoreboard.write("It's a Tie!", align="center", font=("Courier", 24, "normal"))
 
 screen.exitonclick() 
